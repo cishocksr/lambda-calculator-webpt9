@@ -1,12 +1,37 @@
 import React from "react";
 
 const SpecialButton = (props) => {
-  return (
-    <>
-      {/* Display a button element rendering the data being passed down from the parent container on props */}
-      <button>{props.special}</button>
-    </>
-  );
+  if (props.special === "+/-") {
+    return (
+      <>
+        <button className="special-button button" value={`* ${-1}`}>
+          {props.special}
+        </button>
+      </>
+    );
+  } else if (props.special === "%") {
+    return (
+      <button className="special-button button" value={`* .01`}>
+        {props.special}
+      </button>
+    );
+  } else if (props.special === "C") {
+    return (
+      <button className="special-button button" value={props.special}>
+        {props.special}
+      </button>
+    );
+  } else {
+    return (
+      <>
+        {
+          <button className="special-button button" value={props.special}>
+            {props.special}
+          </button>
+        }
+      </>
+    );
+  }
 };
 
 export default SpecialButton;

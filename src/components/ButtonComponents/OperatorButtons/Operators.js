@@ -11,7 +11,7 @@ const Operators = (props) => {
   return (
     <div>
       {oppState.map((opp, i) => (
-        <OperatorButton key={i} operator={opp.value} />
+        <OperatorButton key={i} char={opp.char} operator={opp.value} />
       ))}
     </div>
   );
