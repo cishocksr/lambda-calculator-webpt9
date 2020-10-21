@@ -9,7 +9,7 @@ import { operators } from "../../../data";
 const Operators = (props) => {
   const [oppState] = useState(operators);
   return (
-    <div>
+    <div className="operator-container">
       {oppState.map((opp, i) => (
         <OperatorButton key={i} char={opp.char} operator={opp.value} />
       ))}

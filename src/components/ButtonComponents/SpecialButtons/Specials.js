@@ -6,7 +6,7 @@ const Specials = (props) => {
   const [special] = useState(specials);
   console.log(special);
   return (
-    <div>
+    <div className="special-container">
       {special.map((spec, i) => {
         return <SpecialButtons key={i} special={spec} value={special[i]} />;
       })}

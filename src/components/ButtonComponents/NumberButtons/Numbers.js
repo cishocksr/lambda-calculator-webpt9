@@ -1,19 +1,29 @@
 import React, { useState } from "react";
-import { numbers } from "../../../data";
 import NumberButton from "./NumberButton";
+import { numbers } from "../../../data";
 
-//Import your array data to from the provided data file
-
-const Numbers = (props) => {
+const Numbers = ({ handleClick }) => {
   const [numData] = useState(numbers);
   return (
-    <div>
+    <div className="number-container">
       {numData.map((num, i) => {
         if (num === ".") {
-          return <NumberButton key={i} number={num} state={useState} />;
+          return (
+            <NumberButton
+              key={i}
+              number={num}
+              handleNumClick={handleClick}
+              state={useState}
+            />
+          );
         } else {
           return (
-            <NumberButton key={i} number={parseInt(num)} state={useState} />
+            <NumberButton
+              key={i}
+              number={parseInt(num)}
+              handleClickNum={handleClick}
+              state={useState}
+            />
           );
         }
       })}

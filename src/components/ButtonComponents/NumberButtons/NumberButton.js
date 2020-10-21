@@ -1,20 +1,26 @@
 import React from "react";
 
-const NumberButton = (props) => {
-  if (props.number === 0) {
+const NumberButton = ({ number, handleClickNum }) => {
+  if (number === 0) {
     return (
-      <>
-        <button className="number-button button" value={props.number}>
-          {props.number}
-        </button>
-      </>
+      <button
+        className="zero number-button button"
+        value={number}
+        onClick={handleClickNum}
+      >
+        {number}
+      </button>
     );
   } else {
     return (
       <>
         {
-          <button className="number-button button" value={props.number}>
-            {props.number}
+          <button
+            className="number-button button"
+            value={number}
+            onClick={handleClickNum}
+          >
+            {number}
           </button>
         }
       </>
